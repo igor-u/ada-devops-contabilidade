@@ -1,7 +1,7 @@
 ## Tekuchi Contabilidade
 
-- Trocar **email@[]()example.com**, em `sns.tf`, pelo seu e-mail.
-
+- Trocar **email@[]()example.com**, em `sns.tf`, pelo seu e-mail;
+- Os comandos - de provisionamento, de instalação de bibliotecas, e de execução - devem ser executados no diretório raiz do projeto;
 ```
   terraform init
 ```
@@ -12,8 +12,9 @@
   terraform apply -auto-approve
 ```
 ## Confirmação de que o Banco de Dados Existe
-- Senha: tekuchi123
-- Copiar endpoint da instância de banco de dados criada, colar no lugar de `my-db-endpoint` no comando:
+- Foi usado um sistema de banco de dados MySQL, e acessado (opcionalmente) através de máquina local;
+- Senha: `tekuchi123`;
+- Copiar endpoint da instância de banco de dados provisionada, colar no lugar de `my-db-endpoint` no comando:
 ```
   mysql -h my-db-endpoint -u admin -P 3306 -p
 ```
@@ -36,6 +37,8 @@
   pip install boto3
 ```
 ## Execução do Arquivo Principal
+- O programa cria um arquivo `relatorio-contabil.csv` com dados aleatórios, usando os módulos UUID e Random, e insere esse arquivo em um Bucket S3.
+- O nome do Bucket a ser inserido na execução do programa deve ser o nome (único) do Bucket criado através do provisionamento realizado com Terraform.
 ```
   python3 auditoria-fiscal.py
 ```
