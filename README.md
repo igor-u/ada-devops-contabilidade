@@ -1,6 +1,6 @@
 ## Tekuchi Contabilidade
 
-- Trocar **email@[]()example.com**, em `sns.tf` pelo seu e-mail.
+- Trocar **email@[]()example.com**, em `sns.tf`, pelo seu e-mail.
 
 ```
   terraform init
